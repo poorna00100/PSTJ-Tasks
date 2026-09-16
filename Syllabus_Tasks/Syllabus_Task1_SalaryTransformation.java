@@ -1,16 +1,7 @@
-// Salary Transformation System
-// Problem Description
-// A company stores employee salaries in a list. Increase each salary by 10% and print the updated salaries using functional transformation techniques.
-// Input Format
-// •	First line contains integer N.
-// •	Second line contains N space-separated integers.
-// Output Format
-// Print updated salaries.
-// Constraints
-// •	1 ≤ N ≤ 10^5
-
-import java.util.*;
-public class Main {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class task1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -19,7 +10,8 @@ public class Main {
             salaries.add(sc.nextInt());
         }
         salaries.stream()
-                .map(salary -> salary + (salary * 10 / 100))
+                .map(salary -> (int)(salary * 1.10))
                 .forEach(salary -> System.out.print(salary + " "));
+        sc.close();
     }
 }
