@@ -70,8 +70,7 @@ class Trip {
     }
 }
 
-public class task6 {
-
+public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -87,33 +86,26 @@ public class task6 {
             double distance = sc.nextDouble();
 
             try {
-
                 Vehicle vehicle;
 
                 if (type.equals("Bike")) {
                     vehicle = new Bike();
-                }
+                } 
                 else if (type.equals("Auto")) {
                     vehicle = new Auto();
-                }
+                } 
                 else if (type.equals("Cab")) {
                     vehicle = new Cab();
-                }
+                } 
                 else {
                     throw new InvalidBookingException("Invalid ride type");
                 }
 
-                Trip trip = new Trip(
-                        driver,
-                        rider,
-                        vehicle,
-                        distance
-                );
+                Trip trip = new Trip(driver, rider, vehicle, distance);
 
                 System.out.println((int) trip.getFare());
 
-            }
-            catch (InvalidBookingException e) {
+            } catch (InvalidBookingException e) {
                 System.out.println(e.getMessage());
             }
         }
