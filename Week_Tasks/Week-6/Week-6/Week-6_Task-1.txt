@@ -1,0 +1,25 @@
+Input: 
+s = "book"
+Output: 
+true
+class Solution {
+    public boolean halvesAreAlike(String s) {
+        int mid = s.length() / 2;
+        String a = s.substring(0, mid);
+        String b = s.substring(mid);
+        int ca = 0;
+        int cb = 0;
+        for(char ch : a.toCharArray()){
+        if("aeiouAEIOU" .indexOf(ch) >= 0){
+        ca++;
+        }
+        }
+        for(char ch : b.toCharArray()){
+        if("aeiouAEIOU".indexOf(ch) >= 0){
+            cb++;
+        }
+        }
+        return ca == cb;
+
+    }
+}
